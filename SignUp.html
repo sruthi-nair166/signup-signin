@@ -9,46 +9,58 @@
   <body>
     <main>
       <form action="">
-        <h1>Sign Up</h1>
-        <label for="full-name">Full Name</label>
+        <h1>SIGN UP</h1>
+
+        <label for="full-name-signup">Full Name</label>
+        <p id="name-error" class="error"></p>
         <input
           type="text"
-          id="full-name"
+          id="full-name-signup"
           placeholder="Enter your full name"
           required
         />
-        <label for="email">Email ID</label>
+
+        <label for="email-signup">Email ID</label>
+        <p id="email-error" class="error"></p>
         <input
           type="email"
-          id="email"
+          id="email-signup"
           placeholder="Enter your email id"
           required
         />
-        <label for="phone">Phone Number</label>
+
+        <label for="phone-signup">Phone Number</label>
+        <p id="phone-error" class="error"></p>
         <input
           type="text"
-          id="phone"
+          id="phone-signup"
           placeholder="Enter your phone number"
           required
         />
-        <label for="city">City Name</label>
+
+        <label for="city-signup">City Name</label>
+        <p id="city-error" class="error"></p>
         <input
           type="text"
-          id="city"
+          id="city-signup"
           placeholder="Enter your city name"
           required
         />
-        <label for="password">Password</label>
+
+        <label for="password-signup">Password</label>
+        <p id="password-error" class="error"></p>
         <input
           type="password"
-          id="password"
+          id="password-signup"
           placeholder="Enter your password"
           required
         />
-        <label for="confirm-password">Confirm Password</label>
+
+        <label for="confirm-password-signup">Confirm Password</label>
+        <p id="confirm-password-error" class="error"></p>
         <input
           type="password"
-          id="confirm-password"
+          id="confirm-password-signup"
           placeholder="Enter your password again"
           required
         />
@@ -59,5 +71,6 @@
         </p>
       </form>
     </main>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
