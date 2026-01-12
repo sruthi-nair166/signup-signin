@@ -5,8 +5,14 @@ const phoneError = document.getElementById("phone-error");
 const cityError = document.getElementById("city-error");
 const passwordError = document.getElementById("password-error");
 const confirmPasswordError = document.getElementById("confirm-password-error");
+const signupForm = document.getElementById("form-signup");
 
+let nameInput;
+let emailInput;
+let phoneInput;
+let cityNameInput;
 let passwordInput;
+let confirmPasswordInput;
 
 function nameValidation(e) {
   if (!e.target.value.trim()) {
@@ -14,6 +20,7 @@ function nameValidation(e) {
     return;
   }
   nameError.textContent = "";
+  nameInput = e.target.value.trim();
 }
 
 function emailValidation(e) {
@@ -29,6 +36,7 @@ function emailValidation(e) {
     return;
   }
   emailError.textContent = "";
+  emailInput = e.target.value.trim();
 }
 
 function phoneValidation(input, e) {
@@ -40,11 +48,13 @@ function phoneValidation(input, e) {
     return;
   }
 
-  if (e.target.value.length > 10) {
-    phoneError.textContent = "Phone number cannot be more that 10 digits";
-    return;
-  } else {
+  if (e.target.value.length <= 10) {
     phoneError.textContent = "";
+    phoneInput = numberInput;
+  } else {
+    phoneError.textContent = "Phone number cannot be more that 10 digits";
+    phoneInput = "";
+    return;
   }
 }
 
@@ -57,6 +67,7 @@ function cityValidation(input, e) {
     return;
   }
   cityError.textContent = "";
+  cityNameInput = cityInput;
 }
 
 function passwordValidation(e) {
@@ -79,9 +90,13 @@ function passwordValidation(e) {
 
   if (messages.length === 0) {
     passwordError.textContent = "";
-    passwordInput = e.target.value;
+    passwordInput = password;
   } else {
     passwordError.textContent = "Password must contain " + messages.join(", ");
+  }
+
+  if (passwordInput === confirmPasswordInput) {
+    confirmPasswordError.textContent = "";
   }
   console.log(passwordInput);
 }
@@ -97,6 +112,7 @@ function confirmPasswordValidation(e) {
     return;
   }
   confirmPasswordError.textContent = "";
+  confirmPasswordInput = e.target.value.trim();
   console.log(e.target.value.trim(), passwordInput);
 }
 
@@ -123,4 +139,31 @@ inputs.forEach((input) => {
         break;
     }
   });
+});
+
+signupForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (
+    nameInput &&
+    emailInput &&
+    phoneInput &&
+    cityNameInput &&
+    passwordInput &&
+    confirmPasswordInput
+  ) {
+    alert("Signup Successful! Your new Account has been created.");
+
+    const userData = {
+      name: nameInput,
+      email: emailInput,
+      phone: phoneInput,
+      city: cityNameInput,
+      password: passwordInput,
+    };
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    window.location.href = "SignIn.html";
+  } else {
+    alert("Something went wrong. Please recheck the fields with errors");
+  }
 });
