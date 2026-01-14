@@ -61,6 +61,28 @@ h1 {
   border-radius: 0.3rem;
 }
 
+.main-error-shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .error {
   color: rgb(211, 1, 1);
   font-size: 0.813rem;

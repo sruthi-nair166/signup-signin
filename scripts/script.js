@@ -72,13 +72,12 @@ if (signupForm) {
       return;
     }
 
-    if (input.value.length <= 10) {
+    if (input.value.length === 10) {
       phoneError.textContent = "";
       phoneInput = numberInput;
     } else {
-      phoneError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Phone number cannot be more that 10 digits`;
+      phoneError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Phone number has to have 10 digits`;
       phoneInput = "";
-      return;
     }
   }
 
@@ -111,8 +110,8 @@ if (signupForm) {
     let messages = [];
 
     if (!hasLength) messages.push("at least 8 characters");
-    if (!hasLetter) messages.push("a letter");
-    if (!hasNumber) messages.push("a number");
+    if (!hasLetter) messages.push("1 letter");
+    if (!hasNumber) messages.push("1 number");
 
     if (messages.length === 0) {
       passwordErrorSignup.textContent = "";
@@ -227,6 +226,10 @@ if (signupForm) {
       mainErrorSignup.style.display = "block";
       mainErrorSignup.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Something went wrong. Please recheck the fields with errors`;
 
+      mainErrorSignup.classList.remove("main-error-shake");
+      void mainErrorSignup.offsetWidth;
+      mainErrorSignup.classList.add("main-error-shake");
+
       const nameInputField = document.getElementById("full-name-signup");
       const emailInputFieldSignup = document.getElementById("email-signup");
       const phoneInputField = document.getElementById("phone-signup");
@@ -253,6 +256,7 @@ const passwordShowIconSignin = document.querySelector(
 const emailErrorSignin = document.getElementById("email-error-signin");
 const passwordErrorSignin = document.getElementById("password-error-signin");
 const signinForm = document.getElementById("form-signin");
+const mainErrorSignin = document.getElementById("main-error-signin");
 
 if (signinForm) {
   function emailValidationSignin() {
@@ -292,5 +296,28 @@ if (signinForm) {
       passwordShowIconSignin.classList.remove("fa-eye-slash");
       passwordShowIconSignin.classList.add("fa-eye");
     }
+  });
+
+  signinForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const userData = JSON.parse(localStorage.getItem("user"));
+
+    if (
+      userData.email !== emailInputFieldSignin.value ||
+      userData.password !== passwordInputFieldSignin.value
+    ) {
+      mainErrorSignin.style.display = "block";
+      mainErrorSignin.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Email or Password is invalid`;
+
+      mainErrorSignin.classList.remove("main-error-shake");
+      void mainErrorSignin.offsetWidth;
+      mainErrorSignin.classList.add("main-error-shake");
+
+      emailValidationSignin();
+      passwordValidationSignin();
+      return;
+    }
+    window.location.href = "TravelLandingPage.html";
   });
 }
