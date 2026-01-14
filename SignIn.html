@@ -12,30 +12,39 @@
   </head>
   <body>
     <main>
-      <form id="form-signin" novalidate>
+      <form id="form-signin">
         <h1>SIGN IN</h1>
 
-        <p id="main-error-signin" class="main-error"></p>
+        <p id="main-error-signin" class="main-error" aria-live="assertive"></p>
 
         <label for="email-signin">Email ID</label>
-        <p id="email-error-signin" class="error"></p>
+        <p id="email-error-signin" class="error" aria-live="polite"></p>
         <input
           type="email"
           id="email-signin"
+          aria-describedby="email-error-signin"
+          aria-invalid="false"
           placeholder="Enter your email id"
           required
         />
 
         <label for="password-signin">Password</label>
-        <p id="password-error-signin" class="error"></p>
+        <p id="password-error-signin" class="error" aria-live="polite"></p>
         <div id="password-input-wrapper-signin">
           <input
             type="password"
             id="password-signin"
+            aria-describedby="password-error-signin"
+            aria-invalid="false"
             placeholder="Enter your password"
             required
           />
-          <button type="button" id="password-show-signin" class="password-show">
+          <button
+            type="button"
+            id="password-show-signin"
+            class="password-show"
+            aria-label="show password"
+          >
             <i class="fa-solid fa-eye"></i>
           </button>
         </div>

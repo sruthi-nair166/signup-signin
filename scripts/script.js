@@ -37,16 +37,19 @@ if (signupForm) {
   function nameValidation(input) {
     if (!input.value.trim()) {
       nameError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      input.setAttribute("aria-invalid", "true");
       nameInput = "";
       return;
     }
     nameError.textContent = "";
     nameInput = input.value.trim();
+    input.setAttribute("aria-invalid", "false");
   }
 
   function emailValidation(input) {
     if (!input.value.trim()) {
       emailErrorSignup.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      input.setAttribute("aria-invalid", "true");
       emailInputSignup = "";
       return;
     }
@@ -55,11 +58,13 @@ if (signupForm) {
 
     if (!emailRegex.test(input.value)) {
       emailErrorSignup.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email`;
+      input.setAttribute("aria-invalid", "true");
       emailInputSignup = "";
       return;
     }
     emailErrorSignup.textContent = "";
     emailInputSignup = input.value.trim();
+    input.setAttribute("aria-invalid", "false");
   }
 
   function phoneValidation(input) {
@@ -68,6 +73,7 @@ if (signupForm) {
 
     if (!numberInput.trim()) {
       phoneError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      input.setAttribute("aria-invalid", "true");
       phoneInput = "";
       return;
     }
@@ -75,8 +81,10 @@ if (signupForm) {
     if (input.value.length === 10) {
       phoneError.textContent = "";
       phoneInput = numberInput;
+      input.setAttribute("aria-invalid", "false");
     } else {
       phoneError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Phone number has to have 10 digits`;
+      input.setAttribute("aria-invalid", "true");
       phoneInput = "";
     }
   }
@@ -87,11 +95,13 @@ if (signupForm) {
 
     if (!cityInput.trim()) {
       cityError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      input.setAttribute("aria-invalid", "true");
       cityNameInput = "";
       return;
     }
     cityError.textContent = "";
     cityNameInput = cityInput.trim();
+    input.setAttribute("aria-invalid", "false");
   }
 
   function passwordValidation(input) {
@@ -99,6 +109,7 @@ if (signupForm) {
 
     if (!password) {
       passwordErrorSignup.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      input.setAttribute("aria-invalid", "true");
       passwordInputSignup = "";
       return;
     }
@@ -116,11 +127,13 @@ if (signupForm) {
     if (messages.length === 0) {
       passwordErrorSignup.textContent = "";
       passwordInputSignup = password;
+      input.setAttribute("aria-invalid", "false");
     } else {
       passwordErrorSignup.innerHTML =
         `<i class="fa-solid fa-circle-exclamation"></i> Password must contain ` +
         messages.join(", ");
       passwordInputSignup = "";
+      input.setAttribute("aria-invalid", "true");
     }
 
     if (passwordInputSignup === confirmPasswordInput) {
@@ -133,6 +146,7 @@ if (signupForm) {
   function confirmPasswordValidation(input) {
     if (!input.value.trim()) {
       confirmPasswordError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      input.setAttribute("aria-invalid", "true");
       confirmPasswordInput = "";
       return;
     }
@@ -144,11 +158,13 @@ if (signupForm) {
 
     if (input.value.trim() !== passwordInputSignup) {
       confirmPasswordError.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Passwords do not match`;
+      input.setAttribute("aria-invalid", "true");
       confirmPasswordInput = "";
       return;
     }
     confirmPasswordError.textContent = "";
     confirmPasswordInput = input.value.trim();
+    input.setAttribute("aria-invalid", "false");
   }
 
   inputs.forEach((input) => {
@@ -179,10 +195,12 @@ if (signupForm) {
   passwordShowSignup.addEventListener("click", () => {
     if (passwordInputFieldSignup.type === "password") {
       passwordInputFieldSignup.type = "text";
+      passwordShowSignup.setAttribute("aria-label", "hide password");
       passwordShowIconSignup.classList.remove("fa-eye");
       passwordShowIconSignup.classList.add("fa-eye-slash");
     } else {
       passwordInputFieldSignup.type = "password";
+      passwordShowSignup.setAttribute("aria-label", "show password");
       passwordShowIconSignup.classList.remove("fa-eye-slash");
       passwordShowIconSignup.classList.add("fa-eye");
     }
@@ -191,10 +209,12 @@ if (signupForm) {
   confirmPasswordShow.addEventListener("click", () => {
     if (confirmPasswordInputField.type === "password") {
       confirmPasswordInputField.type = "text";
+      confirmPasswordShow.setAttribute("aria-label", "hide password");
       confirmPasswordShowIcon.classList.remove("fa-eye");
       confirmPasswordShowIcon.classList.add("fa-eye-slash");
     } else {
       confirmPasswordInputField.type = "password";
+      confirmPasswordShow.setAttribute("aria-label", "show password");
       confirmPasswordShowIcon.classList.remove("fa-eye-slash");
       confirmPasswordShowIcon.classList.add("fa-eye");
     }
@@ -262,6 +282,7 @@ if (signinForm) {
   function emailValidationSignin() {
     if (!emailInputFieldSignin.value.trim()) {
       emailErrorSignin.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      emailInputFieldSignin.setAttribute("aria-invalid", "true");
       return;
     }
 
@@ -269,17 +290,21 @@ if (signinForm) {
 
     if (!emailRegex.test(emailInputFieldSignin.value)) {
       emailErrorSignin.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email`;
+      emailInputFieldSignin.setAttribute("aria-invalid", "true");
       return;
     }
     emailErrorSignin.textContent = "";
+    emailInputFieldSignin.setAttribute("aria-invalid", "false");
   }
 
   function passwordValidationSignin() {
     if (!passwordInputFieldSignin.value.trim()) {
       passwordErrorSignin.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> This field cannot be empty`;
+      passwordInputFieldSignin.setAttribute("aria-invalid", "true");
       return;
     }
     passwordErrorSignin.textContent = "";
+    passwordInputFieldSignin.setAttribute("aria-invalid", "false");
   }
 
   emailInputFieldSignin.addEventListener("input", emailValidationSignin);
@@ -289,10 +314,12 @@ if (signinForm) {
   passwordShowSignin.addEventListener("click", () => {
     if (passwordInputFieldSignin.type === "password") {
       passwordInputFieldSignin.type = "text";
+      passwordShowSignin.setAttribute("aria-label", "hide password");
       passwordShowIconSignin.classList.remove("fa-eye");
       passwordShowIconSignin.classList.add("fa-eye-slash");
     } else {
       passwordInputFieldSignin.type = "password";
+      passwordShowSignin.setAttribute("aria-label", "show password");
       passwordShowIconSignin.classList.remove("fa-eye-slash");
       passwordShowIconSignin.classList.add("fa-eye");
     }

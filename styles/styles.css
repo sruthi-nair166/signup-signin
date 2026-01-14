@@ -123,6 +123,7 @@ input::placeholder {
 
 .password-show {
   position: absolute;
+  padding: 0.5rem;
   top: 50%;
   right: 10px;
   transform: translate(0%, -50%);
