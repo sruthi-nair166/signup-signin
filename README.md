@@ -30,6 +30,16 @@ The Signin page verifies the entered credentials against the stored data and red
 
 The project is designed to be responsive across screen sizes and includes basic accessibility considerations for form inputs and error messages.
 
+### UI/UX Decisions
+
+- Used inline, field-level validation to give immediate feedback during form completion without breaking the user’s flow.
+
+- Validated inputs progressively (name, email, phone number, password strength, confirmation) to prevent invalid submissions and reduce correction effort.
+
+- Provided clear success and error feedback during signup and signin so users always understand the outcome of their action.
+
+- Designed the forms to be responsive and accessible, with readable labels, logical tab order, and clearly visible error states across screen sizes.
+
 ### Built With
 
 - HTML
