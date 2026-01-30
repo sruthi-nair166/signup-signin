@@ -22,13 +22,30 @@ Live Site: [https://sruthi-nair166.github.io/signup-signin/SignIn.html](https://
 
 ### Overview
 
-This project is a responsive Signup and Signin page with client-side JavaScript validations. It allows users to create an account by entering their details and validates each field with inline error messages for better user feedback.
+This project is a responsive Signup and Signin interface that allows users to create an account and authenticate using client-side JavaScript validations.
 
-The Signup page includes validations for full name, email format, phone number, city name, password strength, and password confirmation. User credentials are stored using browser localStorage.
+### Features
 
-The Signin page verifies the entered credentials against the stored data and redirects the user to the Tourist Landing Page upon successful authentication. Invalid credentials display appropriate error messages to guide the user.
+- **Signup with Client-Side Validation** <br />
+  Validates user input with inline error messages.
+  
+- **Field-Level Validations** <br />
+  Includes validation for full name, email format, phone number, city name, password strength, and password confirmation.
 
-The project is designed to be responsive across screen sizes and includes basic accessibility considerations for form inputs and error messages.
+- **Local Storage Authentication** <br />
+  Stores user credentials securely in browser localStorage for basic authentication flow.
+
+- **Signin Verification** <br />
+  Verifies entered credentials against stored data and handles authentication logic.
+
+- **Post-Login Redirection** <br />
+  Redirects users to the Tourist Landing Page upon successful sign-in.
+
+- **Error Handling for Invalid Credentials** <br />
+  Displays appropriate error messages when authentication fails to guide the user.
+
+- **Responsive & Accessible Design** <br />
+  Designed to be responsive across screen sizes with basic accessibility considerations for form inputs and error messaging.
 
 ### UI/UX Decisions
 
