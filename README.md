@@ -38,9 +38,6 @@ This project is a responsive Signup and Signin interface that allows users to cr
 - **Signin Verification** <br />
   Verifies entered credentials against stored data and handles authentication logic.
 
-- **Post-Login Redirection** <br />
-  Redirects users to the Tourist Landing Page upon successful sign-in.
-
 - **Error Handling for Invalid Credentials** <br />
   Displays appropriate error messages when authentication fails to guide the user.
 
