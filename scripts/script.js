@@ -5,21 +5,21 @@ const phoneError = document.getElementById("phone-error-signup");
 const cityError = document.getElementById("city-error-signup");
 const passwordErrorSignup = document.getElementById("password-error-signup");
 const confirmPasswordError = document.getElementById(
-  "confirm-password-error-signup"
+  "confirm-password-error-signup",
 );
 const passwordShowSignup = document.getElementById("password-show-signup");
 const passwordShowIconSignup = document.querySelector(
-  "#password-show-signup i"
+  "#password-show-signup i",
 );
 const confirmPasswordShow = document.getElementById(
-  "confirm-password-show-signup"
+  "confirm-password-show-signup",
 );
 const confirmPasswordShowIcon = document.querySelector(
-  "#confirm-password-show-signup i"
+  "#confirm-password-show-signup i",
 );
 const passwordInputFieldSignup = document.getElementById("password-signup");
 const confirmPasswordInputField = document.getElementById(
-  "confirm-password-signup"
+  "confirm-password-signup",
 );
 const mainErrorSignup = document.getElementById("main-error-signup");
 const signupForm = document.getElementById("form-signup");
@@ -271,7 +271,7 @@ const emailInputFieldSignin = document.getElementById("email-signin");
 const passwordInputFieldSignin = document.getElementById("password-signin");
 const passwordShowSignin = document.getElementById("password-show-signin");
 const passwordShowIconSignin = document.querySelector(
-  "#password-show-signin i"
+  "#password-show-signin i",
 );
 const emailErrorSignin = document.getElementById("email-error-signin");
 const passwordErrorSignin = document.getElementById("password-error-signin");
@@ -331,8 +331,8 @@ if (signinForm) {
     const userData = JSON.parse(localStorage.getItem("user"));
 
     if (
-      userData.email !== emailInputFieldSignin.value ||
-      userData.password !== passwordInputFieldSignin.value
+      userData?.email !== emailInputFieldSignin.value ||
+      userData?.password !== passwordInputFieldSignin.value
     ) {
       mainErrorSignin.style.display = "block";
       mainErrorSignin.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Email or Password is invalid`;
@@ -345,6 +345,8 @@ if (signinForm) {
       passwordValidationSignin();
       return;
     }
-    window.location.href = "TravelLandingPage.html";
+    mainErrorSignin.style.display = "none";
+    mainErrorSignin.innerHTML = "";
+    alert("Login successful!");
   });
 }
