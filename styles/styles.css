@@ -107,6 +107,11 @@ input::placeholder {
   color: #4e332699;
 }
 
+input.masked {
+  -webkit-text-security: disc;
+  text-security: disc;
+}
+
 #password-input-wrapper-signup,
 #confirm-password-input-wrapper-signup,
 #password-input-wrapper-signin {

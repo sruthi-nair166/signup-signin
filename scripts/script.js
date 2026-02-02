@@ -192,31 +192,39 @@ if (signupForm) {
     });
   });
 
+  let passwordVisibleSignUp = false;
+
   passwordShowSignup.addEventListener("click", () => {
-    if (passwordInputFieldSignup.type === "password") {
-      passwordInputFieldSignup.type = "text";
+    passwordVisibleSignUp = !passwordVisibleSignUp;
+
+    if (passwordVisibleSignUp) {
       passwordShowSignup.setAttribute("aria-label", "hide password");
+      passwordInputFieldSignup.classList.remove("masked");
       passwordShowIconSignup.classList.remove("fa-eye");
       passwordShowIconSignup.classList.add("fa-eye-slash");
     } else {
-      passwordInputFieldSignup.type = "password";
       passwordShowSignup.setAttribute("aria-label", "show password");
-      passwordShowIconSignup.classList.remove("fa-eye-slash");
+      passwordInputFieldSignup.classList.add("masked");
       passwordShowIconSignup.classList.add("fa-eye");
+      passwordShowIconSignup.classList.remove("fa-eye-slash");
     }
   });
 
+  let confirmPasswordVisibleSignUp = false;
+
   confirmPasswordShow.addEventListener("click", () => {
-    if (confirmPasswordInputField.type === "password") {
-      confirmPasswordInputField.type = "text";
+    confirmPasswordVisibleSignUp = !confirmPasswordVisibleSignUp;
+
+    if (confirmPasswordVisibleSignUp) {
       confirmPasswordShow.setAttribute("aria-label", "hide password");
+      confirmPasswordInputField.classList.remove("masked");
       confirmPasswordShowIcon.classList.remove("fa-eye");
       confirmPasswordShowIcon.classList.add("fa-eye-slash");
     } else {
-      confirmPasswordInputField.type = "password";
       confirmPasswordShow.setAttribute("aria-label", "show password");
-      confirmPasswordShowIcon.classList.remove("fa-eye-slash");
+      confirmPasswordInputField.classList.add("masked");
       confirmPasswordShowIcon.classList.add("fa-eye");
+      confirmPasswordShowIcon.classList.remove("fa-eye-slash");
     }
   });
 
@@ -311,15 +319,19 @@ if (signinForm) {
 
   passwordInputFieldSignin.addEventListener("input", passwordValidationSignin);
 
+  let passwordVisibleSignin = false;
+
   passwordShowSignin.addEventListener("click", () => {
-    if (passwordInputFieldSignin.type === "password") {
-      passwordInputFieldSignin.type = "text";
+    passwordVisibleSignin = !passwordVisibleSignin;
+
+    if (passwordVisibleSignin) {
       passwordShowSignin.setAttribute("aria-label", "hide password");
+      passwordInputFieldSignin.classList.remove("masked");
       passwordShowIconSignin.classList.remove("fa-eye");
       passwordShowIconSignin.classList.add("fa-eye-slash");
     } else {
-      passwordInputFieldSignin.type = "password";
       passwordShowSignin.setAttribute("aria-label", "show password");
+      passwordInputFieldSignin.classList.add("masked");
       passwordShowIconSignin.classList.remove("fa-eye-slash");
       passwordShowIconSignin.classList.add("fa-eye");
     }

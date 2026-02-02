@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -32,8 +32,11 @@
         <p id="password-error-signin" class="error" aria-live="polite"></p>
         <div id="password-input-wrapper-signin">
           <input
-            type="password"
+            type="text"
+            name="password_demo"
+            autocomplete="off"
             id="password-signin"
+            class="masked"
             aria-describedby="password-error-signin"
             aria-invalid="false"
             placeholder="Enter your password"

@@ -65,8 +65,11 @@
         <p id="password-error-signup" class="error" aria-live="polite"></p>
         <div id="password-input-wrapper-signup">
           <input
-            type="password"
+            type="text"
+            name="password_demo"
+            autocomplete="off"
             id="password-signup"
+            class="masked"
             aria-describedby="password-error-signup"
             aria-invalid="false"
             placeholder="Enter your password"
@@ -90,8 +93,11 @@
         ></p>
         <div id="confirm-password-input-wrapper-signup">
           <input
-            type="password"
+            type="text"
+            name="confirm_password_demo"
+            autocomplete="off"
             id="confirm-password-signup"
+            class="masked"
             aria-describedby="confirm-password-error-signup"
             aria-invalid="false"
             placeholder="Enter your password again"
