@@ -1,4 +1,4 @@
-# SignUp and SignIn pages
+# Authentication Form
 
 ## Table of contents
 
