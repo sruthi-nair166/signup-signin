@@ -347,6 +347,8 @@ if (signinForm) {
     }
     mainErrorSignin.style.display = "none";
     mainErrorSignin.innerHTML = "";
+    emailInputFieldSignin.value = "";
+    passwordInputFieldSignin.value = "";
     alert("Login successful!");
   });
 }
