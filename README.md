@@ -14,7 +14,7 @@
 
 ### Links
 
-Live Site: [https://sruthi-nair166.github.io/signup-signin/SignIn.html](https://sruthi-nair166.github.io/signup-signin/SignIn.html)
+Live Site: []()
 
 ### Screenshots
 
@@ -28,7 +28,6 @@ This project is a responsive Signup and Signin interface that allows users to cr
 
 - **Signup with Client-Side Validation** <br />
   Validates user input with inline error messages.
-  
 - **Field-Level Validations** <br />
   Includes validation for full name, email format, phone number, city name, password strength, and password confirmation.
 

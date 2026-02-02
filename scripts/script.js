@@ -241,7 +241,7 @@ if (signupForm) {
       };
       localStorage.setItem("user", JSON.stringify(userData));
 
-      window.location.href = "SignIn.html";
+      window.location.href = "index.html";
     } else {
       mainErrorSignup.style.display = "block";
       mainErrorSignup.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Something went wrong. Please recheck the fields with errors`;
