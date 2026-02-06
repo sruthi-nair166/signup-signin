@@ -3,7 +3,6 @@
 ## Table of contents
 
 - [About](#about)
-  - [Links](#links)
   - [Screenshots](#screenshots)
   - [Overview](#overview)
   - [Features](#features)
@@ -13,10 +12,6 @@
 - [Acknowledgments](#acknowledgments)
 
 ## About
-
-### Links
-
-Live Site: [https://authentication-form11.netlify.app/](https://authentication-form11.netlify.app/)
 
 ### Screenshots
 
